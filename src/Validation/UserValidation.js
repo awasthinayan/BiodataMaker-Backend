@@ -24,8 +24,10 @@ export const loginValidation = z.object({
     .string()
     .email("Invalid email"),
 
+
   password: z
     .string()
     .min(1, "Password is required")
+    .max(30, "Password must be at most 30 characters")
 });
 
