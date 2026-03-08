@@ -1,10 +1,10 @@
 import express from 'express';
-import { PORT } from './src/Config/serverConfig.js';
-import connectDB from './src/Config/DBConfig.js';
-import Routes from './src/Routes/UserRoute.js';
+import { PORT } from './Config/serverConfig.js';
+import connectDB from './Config/DBConfig.js';
+import Routes from './Routes/UserRoute.js';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import BiodataRoutes from './src/Routes/Biodata.routes.js';
+import BiodataRoutes from './Routes/Biodata.routes.js';
 
 dotenv.config();
 
