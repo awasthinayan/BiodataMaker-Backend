@@ -17,19 +17,3 @@ export const findbyEmail = async (email) => {
     throw error;
   }
 };
-
-export const saveOTPData = async (userDoc, otpHash) => {
-  userDoc.otpHash = otpHash;
-  userDoc.otpExpires = new Date(Date.now() + 5 * 60 * 1000);
-  userDoc.otpAttempts = 0;
-  userDoc.otpVerified = false;
-  userDoc.otpLastSentAt = new Date();
-  await userDoc.save();
-};
-
-export const clearOTP = async (userDoc) => {
-  userDoc.otpHash = null;
-  userDoc.otpExpires = null;
-  userDoc.otpAttempts = 0;
-  await userDoc.save();
-};

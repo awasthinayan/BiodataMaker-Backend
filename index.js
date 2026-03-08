@@ -29,7 +29,6 @@ app.use('/v1/api/biodata', BiodataRoutes);
 
 app.get('/debug/env', (req, res) => {
   res.json({
-    brevo:      process.env.BREVO_API_KEY        ? 'SET' : 'NOT SET',
     cloudinary: process.env.CLOUDINARY_CLOUD_NAME ? 'SET' : 'NOT SET',
     port:       process.env.PORT,
   });

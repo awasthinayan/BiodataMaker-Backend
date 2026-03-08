@@ -1,9 +1,6 @@
 import {
   loginService,
-  resetPasswordService,
-  sendOtpViaBrevoService,
   signUpService,
-  verifyOTPService
 } from '../Service/UserService.js';
 
 export const SignUpController = async (req, res) => {
@@ -99,42 +96,5 @@ export const LoginController = async (req, res) => {
     return res.status(500).json({
       message: 'Internal server error'
     });
-  }
-};
-
-export const sendOTPController = async (req, res) => {
-  try {
-    const { email } = req.body;
-    if (!email) throw new Error('Email required');
-
-    const result = await sendOtpViaBrevoService(email);
-    res.status(200).json(result);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-};
-
-export const verifyOTPController = async (req, res) => {
-  try {
-    const { email, otp } = req.body;
-    if (!email || !otp) throw new Error('Email & OTP required');
-
-    console.log("in controller",email, otp);
-    const result = await verifyOTPService(email, otp);
-    res.status(200).json(result);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-};
-
-export const resetPasswordController = async (req, res) => {
-  try {
-    const { email, password } = req.body;
-    if (!email || !password) throw new Error('Email & password required');
-
-    const result = await resetPasswordService(email, password);
-    res.status(200).json(result);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
   }
 };

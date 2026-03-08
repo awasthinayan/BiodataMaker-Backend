@@ -10,7 +10,6 @@
     "mongoose": "^9.1.2",
     "multer": "^2.1.1",
     "multer-storage-cloudinary": "^4.0.0",
-    "nodemailer": "^7.0.12",
     "nodemon": "^3.1.11",
     "sib-api-v3-sdk": "^8.5.0",
     "zod": "^4.3.5"
